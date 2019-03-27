@@ -1,13 +1,13 @@
-project:
-  name: hello-world
-  environmentDefaults:
+kind: Project
+name: hello-world
+environmentDefaults:
+  providers:
+    - name: npm-package
+  variables:
+    my-variable: hello-variable
+environments:
+  - name: local
     providers:
-      - name: npm-package
-    variables:
-      my-variable: hello-variable
-  environments:
-    - name: local
-      providers:
-        - name: local-kubernetes
-        - name: openfaas
+      - name: local-kubernetes
+      - name: openfaas
 
